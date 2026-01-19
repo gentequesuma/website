@@ -50,6 +50,11 @@
             background-color: var(--color-arena-medio);
             color: var(--color-arena-oscuro);
         }
+        /* Estilo para que el texto de la IA sea legible */
+        .ai-response-text {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
     </style>
 </head>
 <body>
@@ -98,8 +103,8 @@
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold font-elegant mb-4 uppercase">¿Cómo te acompañamos hoy?</h2>
                 <div class="w-24 h-1 bg-[#D4A373] mx-auto mb-6"></div>
-                <p class="text-stone-600 max-w-3xl mx-auto text-lg">
-                    Nuestro compromiso va más allá de un trámite; buscamos sumar momentos de paz y alegría. Entendemos que cada día es una oportunidad para vivir con dignidad.
+                <p class="text-stone-600 max-w-3xl mx-auto text-lg text-justify md:text-center">
+                    Nuestro compromiso va más allá de un trámite; buscamos sumar momentos de paz y alegría. Entendemos que cada día es una oportunidad para vivir con dignidad y disfrutar de tiempo de calidad.
                 </p>
             </div>
 
@@ -129,7 +134,7 @@
                 <div class="bg-white p-8 rounded-[2rem] card-shadow border-t-4 border-[#8D7B68] transition-transform hover:-translate-y-2">
                     <div class="w-16 h-16 icon-circle rounded-2xl flex items-center justify-center text-3xl mb-6">🤝</div>
                     <h3 class="text-xl font-bold text-stone-800 mb-3">Tiempo de Calidad</h3>
-                    <p class="text-stone-600 text-sm leading-relaxed text-justify">Porque no todo es trámites: acompañamos pláticas, caminatas o juegos. Valoramos la compañía humana como eje central del bienestar.</p>
+                    <p class="text-stone-600 text-sm leading-relaxed text-justify">Porque no todo es trámites: acompañamos pláticas, caminatas o juegos de mesa. Valoramos la compañía humana como eje central del bienestar.</p>
                 </div>
             </div>
 
@@ -137,7 +142,7 @@
             <div class="mt-12 bg-stone-800 text-white p-8 md:p-12 rounded-[3rem] shadow-2xl flex flex-col md:flex-row items-center gap-8">
                 <div class="text-5xl">🔧</div>
                 <div class="flex-1">
-                    <h3 class="text-2xl font-bold mb-2">Mantenimiento para un Hogar Seguro</h3>
+                    <h3 class="text-2xl font-bold mb-2 text-white">Mantenimiento para un Hogar Seguro</h3>
                     <p class="text-stone-300">Ofrecemos soporte en el mantenimiento preventivo de la vivienda, asegurando que el entorno sea funcional y libre de riesgos para el adulto mayor.</p>
                 </div>
                 <a href="#contacto" class="bg-[#D4A373] text-white px-8 py-4 rounded-full font-bold uppercase tracking-wider hover:bg-white hover:text-stone-800 transition">Saber más</a>
@@ -260,7 +265,7 @@
         </div>
     </section>
 
-    <!-- Formulario de Contacto (RESTAURADO) -->
+    <!-- Formulario de Contacto -->
     <section id="contacto" class="py-24 bg-white">
         <div class="max-w-4xl mx-auto px-6 bg-[#E2D1C3]/30 p-12 rounded-[3rem] shadow-sm border border-[#E2D1C3]">
             <div class="text-center mb-12">
@@ -280,9 +285,9 @@
                 </div>
                 <div>
                     <label class="block text-xs font-bold text-stone-700 mb-2 uppercase tracking-widest">Detalle de la necesidad</label>
-                    <textarea id="mensaje" rows="3" required placeholder="Ej: Acompañamiento a cita médica, plática o ayuda en casa..." class="w-full px-6 py-4 rounded-2xl bg-white border border-stone-200 outline-none focus:ring-2 focus:ring-[#D4A373] transition"></textarea>
+                    <textarea id="mensaje" rows="3" required placeholder="Ej: Acompañamiento a caminata, ayuda con smartphone o plática..." class="w-full px-6 py-4 rounded-2xl bg-white border border-stone-200 outline-none focus:ring-2 focus:ring-[#D4A373] transition"></textarea>
                 </div>
-                <button type="submit" class="w-full bg-[#8D7B68] text-white font-bold py-6 rounded-2xl hover:bg-stone-800 transition shadow-xl uppercase tracking-widest text-lg">Enviar Solicitud de Información</button>
+                <button type="submit" class="w-full bg-[#8D7B68] text-white font-bold py-6 rounded-2xl hover:bg-stone-800 transition shadow-xl uppercase tracking-widest text-lg">Enviar Solicitud Urgente</button>
             </form>
         </div>
     </section>
@@ -320,7 +325,7 @@
         </div>
         <div id="chat-messages" class="h-96 overflow-y-auto p-6 bg-stone-50 space-y-4 text-sm">
             <div class="bg-white p-4 rounded-2xl shadow-sm italic text-stone-500 border border-stone-100 text-justify leading-tight">
-                Bienvenido. Atendemos a adultos mayores con acompañamiento integral: desde trámites médicos hasta tiempo de calidad y soporte tecnológico. ¿En qué podemos ayudarle hoy?
+                ¡Hola! Soy tu asistente de Gente que Suma. ¿Sabías que no solo apoyamos con trámites? También brindamos tiempo de calidad, pláticas, ayuda tecnológica y mantenimiento del hogar. ¿En qué podemos acompañarte hoy?
             </div>
         </div>
         <div id="chat-loading" class="hidden px-6 py-2 text-xs text-stone-400 italic">Respondiendo...</div>
@@ -333,7 +338,8 @@
     </div>
 
     <script>
-        const apiKey = ""; 
+        // API KEY VERIFICADA
+        const apiKey = "AIzaSyCNZ77H7Z3lfDLGwVU1sRO-KNbpJkBFo8o"; 
         
         function toggleChat() {
             const chat = document.getElementById('chat-window');
@@ -351,6 +357,7 @@
             const prompt = input.value.trim();
             if (!prompt) return;
 
+            // Mostrar mensaje del usuario
             const userMsg = document.createElement('div');
             userMsg.className = "bg-stone-200 p-4 rounded-2xl self-end text-stone-800 ml-auto max-w-[85%] shadow-sm";
             userMsg.innerText = prompt;
@@ -361,25 +368,36 @@
             loading.classList.remove('hidden');
 
             try {
-                const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`, {
+                const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
                         contents: [{ parts: [{ text: prompt }] }],
                         systemInstruction: {
-                            parts: [{ text: "Eres el asistente de 'Gente que Suma' en Querétaro. Atiendes tanto a adultos mayores como a sus hijos/familiares. Explica que el servicio es integral: citas médicas, trámites, soporte tecnológico, mandados, tiempo de calidad (pláticas, juegos, caminatas) y mantenimiento preventivo del hogar. Tono: Paciente, humano, empoderador y muy claro en las políticas de seguridad y transparencia." }]
+                            parts: [{ text: "Eres el asistente oficial de 'Gente que Suma' en Querétaro. Tu misión es ayudar con paciencia infinita y claridad absoluta, enfocándote en adultos mayores o sus familias.\n\nDirectrices de comportamiento:\n1. Tono: Sumamente respetuoso, cálido, paciente y directo. Evita explicaciones complejas.\n2. Qué hacemos: Somos un servicio integral. Ofrecemos acompañamiento a citas médicas, trámites, soporte en compras, ayuda con smartphones (tecnología), tiempo de calidad (pláticas, juegos, paseos) y mantenimiento preventivo del hogar para mayor seguridad.\n3. Brevedad: Las respuestas deben ser cortas y fáciles de leer en dispositivos móviles.\n4. CIERRE OBLIGATORIO: Todas tus respuestas deben terminar con una invitación amable a contactar a un humano por WhatsApp para resolver dudas específicas. Usa este enlace: https://api.whatsapp.com/send?phone=4421260133\n\nEjemplo de cierre: 'Para platicar con una persona de nuestro equipo y darte más detalles, por favor toca este enlace de WhatsApp: https://api.whatsapp.com/send?phone=4421260133'." }]
                         }
                     })
                 });
+                
                 const data = await response.json();
-                const aiText = data.candidates?.[0]?.content?.parts?.[0]?.text || "Lo siento, intente de nuevo.";
+                
+                // Manejo de errores de API
+                if (data.error) {
+                    throw new Error(data.error.message);
+                }
+
+                const aiText = data.candidates?.[0]?.content?.parts?.[0]?.text || "Lo siento, tuve un pequeño problema al pensar la respuesta. ¿Podrías intentar de nuevo?";
                 
                 const aiMsg = document.createElement('div');
-                aiMsg.className = "bg-white p-4 rounded-2xl shadow-sm border border-stone-100 text-stone-700 max-w-[85%]";
+                aiMsg.className = "bg-white p-4 rounded-2xl shadow-sm border border-stone-100 text-stone-700 max-w-[85%] ai-response-text";
                 aiMsg.innerText = aiText;
                 messages.appendChild(aiMsg);
             } catch (e) {
-                console.error(e);
+                console.error("Error AI:", e);
+                const errorMsg = document.createElement('div');
+                errorMsg.className = "bg-red-50 p-3 rounded-xl text-red-700 text-xs italic";
+                errorMsg.innerText = "Error: El servicio de asistente está en mantenimiento momentáneo. Por favor usa el botón de WhatsApp directo.";
+                messages.appendChild(errorMsg);
             } finally {
                 loading.classList.add('hidden');
                 messages.scrollTop = messages.scrollHeight;
@@ -402,7 +420,7 @@
             
             window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${body}`;
             
-            alert("Se abrirá su aplicación de correo para enviar su solicitud URGENTE. Gracias.");
+            alert("Se abrirá su aplicación de correo para enviar su solicitud. Gracias.");
         };
     </script>
 </body>
