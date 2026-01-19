@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- VERSIÓN: 1.0.6 - 19/01/2026 (Corrección de Modelo API) -->
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -305,8 +306,9 @@
                 <a href="#proceso" class="hover:text-white transition">Transparencia</a>
                 <a href="https://api.whatsapp.com/send?phone=4421260133" class="text-[#25D366]">WhatsApp Directo</a>
             </div>
-            <div class="text-[10px] text-stone-600 border-t border-stone-800 pt-8 uppercase tracking-widest">
-                &copy; 2026 Gente que Suma. Respeto, Acompañamiento y Seguridad Civil.
+            <div class="text-[10px] text-stone-600 border-t border-stone-800 pt-8 uppercase tracking-widest flex flex-col items-center gap-2">
+                <span>&copy; 2026 Gente que Suma. Respeto, Acompañamiento y Seguridad Civil.</span>
+                <span class="text-stone-700 bg-stone-800/50 px-3 py-1 rounded-full text-[9px]">Versión 1.0.6 (19 Ene 2026)</span>
             </div>
         </div>
     </footer>
@@ -337,8 +339,7 @@
     </div>
 
     <script>
-        // CONFIGURACIÓN DE LA LLAVE
-        // Pega aquí tu API Key de Google AI Studio sin espacios adicionales.
+        // CONFIGURACIÓN DE LA LLAVE (Verificada con versión 1.0.6)
         const apiKey = "AIzaSyCNZ77H7Z3lfDLGwVU1sRO-KNbpJkBFo8o"; 
         
         function toggleChat() {
@@ -357,7 +358,6 @@
             const prompt = input.value.trim();
             if (!prompt) return;
 
-            // Mostrar mensaje del usuario
             const userMsg = document.createElement('div');
             userMsg.className = "bg-stone-200 p-4 rounded-2xl self-end text-stone-800 ml-auto max-w-[85%] shadow-sm";
             userMsg.innerText = prompt;
@@ -368,13 +368,12 @@
             loading.classList.remove('hidden');
 
             try {
-                // Validación de la llave
                 if (!apiKey || apiKey.length < 10) {
                     throw new Error("API Key no configurada.");
                 }
 
-                // Usamos la API de Gemini 1.5 Flash
-                const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`, {
+                // CORRECCIÓN: Actualizado al modelo 2.5-flash-preview para mayor compatibilidad con v1beta
+                const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
@@ -387,7 +386,6 @@
                 
                 const data = await response.json();
                 
-                // Si la respuesta no es exitosa, mostramos el error específico de Google
                 if (!response.ok) {
                     console.error("Detalle del error de Google:", data.error);
                     throw new Error(data.error?.message || "Error desconocido en la conexión");
@@ -404,7 +402,6 @@
                 console.error("Fallo de conexión:", e);
                 const errorMsg = document.createElement('div');
                 errorMsg.className = "bg-red-50 p-3 rounded-xl text-red-700 text-xs italic border border-red-100";
-                // Mostramos el error real para diagnóstico
                 errorMsg.innerText = `Lo siento, el asistente tiene un problema técnico: ${e.message}. Por favor usa el WhatsApp directo: https://api.whatsapp.com/send?phone=4421260133`;
                 messages.appendChild(errorMsg);
             } finally {
