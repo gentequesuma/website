@@ -6,7 +6,7 @@
     <title>Gente que Suma | Asistencia y Dignidad para la Tercera Edad</title>
     <!-- Tailwind CSS para diseño moderno -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Noto Sans, Playfair Display y Dancing Script para las cursivas -->
+    <!-- Google Fonts: Noto Sans, Playfair Display y Dancing Script -->
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Noto+Sans:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -27,7 +27,6 @@
         .font-cursive {
             font-family: 'Dancing Script', cursive;
         }
-        /* Hero con imagen de fondo completa */
         .hero-section {
             background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://raw.githubusercontent.com/gentequesuma/website/refs/heads/main/demoimg.jpg');
             background-size: cover;
@@ -42,13 +41,8 @@
             transform: scale(1.05);
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
         }
-        /* Ajustes para legibilidad senior */
         p { font-size: 1.15rem; line-height: 1.7; }
         h2 { color: var(--color-arena-oscuro); }
-        
-        #chat-window {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
         .card-shadow {
             box-shadow: 0 4px 20px rgba(141, 123, 104, 0.1);
         }
@@ -56,7 +50,7 @@
 </head>
 <body>
 
-    <!-- Navegación con Logo Oficial y Slogan -->
+    <!-- Navegación -->
     <nav class="bg-white/95 sticky top-0 z-50 shadow-sm border-b border-stone-200">
         <div class="max-w-7xl mx-auto px-6 h-24 flex justify-between items-center">
             <div class="flex items-center">
@@ -68,9 +62,10 @@
                     </div>
                 </a>
             </div>
-            <div class="hidden lg:flex space-x-10 items-center font-semibold text-stone-600 uppercase text-xs tracking-widest">
-                <a href="#garantia" class="hover:text-[#D4A373] transition">Garantía</a>
-                <a href="#proceso" class="hover:text-[#D4A373] transition">Cómo trabajamos</a>
+            <div class="hidden lg:flex space-x-8 items-center font-semibold text-stone-600 uppercase text-xs tracking-widest">
+                <a href="#garantia" class="hover:text-[#D4A373] transition">Confianza</a>
+                <a href="#disponibilidad" class="hover:text-[#D4A373] transition">Citas</a>
+                <a href="#proceso" class="hover:text-[#D4A373] transition">Proceso</a>
                 <a href="#transporte" class="hover:text-[#D4A373] transition">Transporte</a>
                 <a href="#contacto" class="bg-[#8D7B68] text-white px-8 py-3 rounded-full hover:bg-stone-800 transition shadow-md">Contacto</a>
             </div>
@@ -80,77 +75,100 @@
     <!-- Hero Section -->
     <section id="inicio" class="hero-section h-[85vh] flex items-center justify-center text-white text-center px-6">
         <div class="max-w-5xl">
-            <h1 class="text-4xl md:text-7xl font-bold mb-8 leading-tight drop-shadow-lg font-elegant">Tu autonomía y bienestar son nuestra prioridad</h1>
+            <h1 class="text-4xl md:text-7xl font-bold mb-8 leading-tight drop-shadow-lg font-elegant">Tranquilidad para ti, dignidad para ellos</h1>
             <p class="text-xl md:text-3xl mb-12 opacity-95 font-light max-w-3xl mx-auto drop-shadow-md">
-                Acompañamiento profesional y humano en Querétaro. Porque sumar años es sumar experiencias dignas.
+                Acompañamiento profesional en Querétaro diseñado para el adulto mayor y la paz mental de su familia.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-6">
-                <a href="#garantia" class="bg-[#D4A373] text-white px-12 py-5 rounded-full font-bold text-lg hover:shadow-2xl transition shadow-lg uppercase tracking-wider">¿Qué garantizamos?</a>
+                <a href="#disponibilidad" class="bg-[#D4A373] text-white px-12 py-5 rounded-full font-bold text-lg hover:shadow-2xl transition shadow-lg uppercase tracking-wider">Agendar Apoyo</a>
                 <a href="https://api.whatsapp.com/send?phone=4421260133" target="_blank" class="btn-whatsapp text-white px-12 py-5 rounded-full font-bold text-lg flex items-center justify-center shadow-lg">
-                    <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.438 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-2.652 0-5.147 1.035-7.021 2.91s-2.91 4.369-2.912 7.021c-.001 2.154.569 3.655 1.593 5.339l-1.011 3.693 3.791-1.006z"/></svg>
-                    WhatsApp Directo
+                    WhatsApp de Contacto
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Sección: ¿Qué garantizamos? -->
+    <!-- Sección: Confianza para Familias -->
     <section id="garantia" class="py-24 bg-white">
         <div class="max-w-6xl mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold font-elegant mb-4 uppercase">¿Qué garantizamos?</h2>
-                <div class="w-24 h-1 bg-[#D4A373] mx-auto"></div>
+                <h2 class="text-4xl font-bold font-elegant mb-4 uppercase">Confianza Familiar</h2>
+                <div class="w-24 h-1 bg-[#D4A373] mx-auto mb-6"></div>
+                <p class="text-stone-600 max-w-2xl mx-auto italic text-center text-base">Sabemos que dejar a un ser querido en manos de otros es una decisión importante. Por eso, nuestro servicio es transparente y profesional.</p>
             </div>
             <div class="grid md:grid-cols-3 gap-12">
                 <div class="text-center space-y-4">
-                    <div class="text-4xl">🤝</div>
-                    <h3 class="text-xl font-bold text-stone-800">Respeto Absoluto</h3>
-                    <p class="text-stone-600 text-sm">Tratamos a cada adulto mayor con la dignidad que merece, adaptándonos a su ritmo y preferencias, sin presiones de tiempo innecesarias.</p>
-                </div>
-                <div class="text-center space-y-4">
                     <div class="text-4xl">🆔</div>
-                    <h3 class="text-xl font-bold text-stone-800">Plena Identificación</h3>
-                    <p class="text-stone-600 text-sm">Cada colaborador se presenta portando una identificación oficial de <span class="font-cursive text-lg">Gente que Suma</span> para tu total tranquilidad y seguridad.</p>
+                    <h3 class="text-xl font-bold text-stone-800">Seguridad Identificada</h3>
+                    <p class="text-stone-600 text-sm">Nuestros colaboradores portan identificación oficial de la organización. Usted sabrá exactamente quién acompaña a su familiar.</p>
                 </div>
                 <div class="text-center space-y-4">
-                    <div class="text-4xl">⚖️</div>
-                    <h3 class="text-xl font-bold text-stone-800">Transparencia Total</h3>
-                    <p class="text-stone-600 text-sm">Costos claros desde el primer minuto. Sin sorpresas, cobrando únicamente el tiempo efectivo de asistencia y los gastos acordados.</p>
+                    <div class="text-4xl">🧘</div>
+                    <h3 class="text-xl font-bold text-stone-800">Sin Presiones</h3>
+                    <p class="text-stone-600 text-sm">Respetamos el ritmo del adulto mayor. No somos una empresa de servicios acelerados, somos un aliado paciente y humano.</p>
+                </div>
+                <div class="text-center space-y-4">
+                    <div class="text-4xl">📄</div>
+                    <h3 class="text-xl font-bold text-stone-800">Cuentas Claras</h3>
+                    <p class="text-stone-600 text-sm">Al concluir el apoyo, entregamos un desglose detallado de las actividades y retribución para evitar cualquier confusión.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección: Disponibilidad y Urgencias -->
+    <section id="disponibilidad" class="py-24 bg-[#FAF9F6]">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="relative order-2 md:order-1">
+                    <img src="https://raw.githubusercontent.com/gentequesuma/website/refs/heads/main/demoimg.jpg" alt="[Citas y Disponibilidad]" class="rounded-[3rem] shadow-xl grayscale-[20%]">
+                </div>
+                <div class="space-y-8 order-1 md:order-2">
+                    <h2 class="text-4xl font-bold font-elegant uppercase">Citas y Disponibilidad</h2>
+                    <div class="space-y-6">
+                        <div class="bg-white p-6 rounded-2xl border-l-4 border-[#D4A373] card-shadow">
+                            <h4 class="font-bold mb-2">Servicio Programado (Recomendado)</h4>
+                            <p class="text-sm text-stone-600">Para garantizar la disponibilidad de nuestros colaboradores, aconsejamos realizar su cita con al menos <strong>24 horas de anticipación</strong>.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl border-l-4 border-red-300 card-shadow">
+                            <h4 class="font-bold mb-2 text-stone-800">Apoyos Urgentes</h4>
+                            <p class="text-sm text-stone-600 mb-4 text-justify">Entendemos que hay situaciones de última hora donde el familiar no puede asistir a una consulta. Cubrimos urgencias bajo disponibilidad inmediata.</p>
+                            <p class="text-xs text-red-600 font-bold uppercase tracking-tighter italic">Nota importante: No somos un servicio de emergencia médica ni ambulancia. En caso de riesgo vital, por favor contacte a los servicios de emergencia especializados.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Sección: Proceso del Servicio -->
-    <section id="proceso" class="py-24 bg-[#FAF9F6]">
+    <section id="proceso" class="py-24 bg-white">
         <div class="max-w-5xl mx-auto px-6">
-            <h2 class="text-4xl font-bold font-elegant text-center mb-16 uppercase">Nuestro Proceso de Servicio</h2>
+            <h2 class="text-4xl font-bold font-elegant text-center mb-16 uppercase">Nuestro Proceso Transparente</h2>
             <div class="space-y-12">
-                <div class="flex flex-col md:flex-row gap-8 items-start bg-white p-8 rounded-3xl card-shadow">
-                    <div class="bg-[#D4A373] text-white w-12 h-12 rounded-full flex items-center justify-center font-bold shrink-0">1</div>
+                <div class="flex flex-col md:flex-row gap-8 items-start bg-[#FAF9F6] p-8 rounded-3xl">
+                    <div class="bg-[#D4A373] text-white w-12 h-12 rounded-full flex items-center justify-center font-bold shrink-0 shadow-lg">1</div>
                     <div>
-                        <h4 class="text-xl font-bold mb-2">Llegada y Presentación</h4>
-                        <p class="text-stone-600">Nuestro colaborador llega a tu domicilio o punto de encuentro, se identifica plenamente y confirma contigo el costo por hora acordado.</p>
+                        <h4 class="text-xl font-bold mb-2">Identificación e Inicio</h4>
+                        <p class="text-stone-600 text-justify">El colaborador se presenta, confirma su identidad y el costo acordado. Se establece la hora de inicio: <span class="italic">"Empezamos nuestro tiempo de apoyo, con gusto le acompaño a su compromiso."</span></p>
                     </div>
                 </div>
-                <div class="flex flex-col md:flex-row gap-8 items-start bg-white p-8 rounded-3xl card-shadow">
-                    <div class="bg-[#D4A373] text-white w-12 h-12 rounded-full flex items-center justify-center font-bold shrink-0">2</div>
+                <div class="flex flex-col md:flex-row gap-8 items-start bg-[#FAF9F6] p-8 rounded-3xl">
+                    <div class="bg-[#D4A373] text-white w-12 h-12 rounded-full flex items-center justify-center font-bold shrink-0 shadow-lg">2</div>
                     <div>
-                        <h4 class="text-xl font-bold mb-2">Inicio del Acompañamiento</h4>
-                        <p class="text-stone-600 text-justify">
-                            En este momento indicamos la hora de inicio: <span class="italic">"Mire, empieza a correr nuestro tiempo. Si gusta, vamos a encaminarnos a su compromiso o cita médica."</span> 
-                            El tiempo continúa corriendo mientras le acompañamos o esperamos en su cita, siempre atentos a sus necesidades.
-                        </p>
+                        <h4 class="text-xl font-bold mb-2">Acompañamiento Dedicado</h4>
+                        <p class="text-stone-600 text-justify">Estamos al pendiente durante toda la cita o trámite. El tiempo corre mientras estemos brindando la presencia y el soporte humano que usted o su familiar necesiten.</p>
                     </div>
                 </div>
                 <div class="flex flex-col md:flex-row gap-8 items-start bg-white p-8 rounded-3xl card-shadow border-l-8 border-[#8D7B68]">
                     <div class="bg-[#8D7B68] text-white w-12 h-12 rounded-full flex items-center justify-center font-bold shrink-0">3</div>
                     <div>
-                        <h4 class="text-xl font-bold mb-2">Conclusión del Servicio</h4>
-                        <p class="text-stone-600 text-justify leading-relaxed">
-                            Para poder brindar puntualidad a todos nuestros amigos, el servicio concluye al momento de recibir el pago. 
-                            Una vez finalizado el cobro, nos despedimos cordialmente para atender nuestro siguiente compromiso. 
-                            Apreciamos mucho su conversación y compañía, pero para mantener nuestra calidad y horarios, una vez hecho el cobro ya no nos es posible permanecer más tiempo en el domicilio.
+                        <h4 class="text-xl font-bold mb-2">Cierre y Nota de Retribución</h4>
+                        <p class="text-stone-600 text-justify leading-relaxed mb-4">
+                            Al finalizar el tiempo, se realiza el cobro y se entrega una <strong>Nota de Retribución por Apoyo</strong>. En ella se desglosa el tiempo (ej. 2h) y el apoyo en transporte (ej. 30km) para su tranquilidad.
+                        </p>
+                        <p class="text-sm italic text-stone-500 text-justify">
+                            *Esta nota no es una factura comercial, sino un comprobante de la donación/retribución en agradecimiento por el apoyo civil prestado. Una vez efectuado el cobro, el colaborador debe retirarse para cumplir con otros compromisos programados.
                         </p>
                     </div>
                 </div>
@@ -159,59 +177,55 @@
     </section>
 
     <!-- Sección: Sobre el Transporte -->
-    <section id="transporte" class="py-24 bg-white">
+    <section id="transporte" class="py-24 bg-[#FAF9F6]">
         <div class="max-w-6xl mx-auto px-6">
             <div class="grid md:grid-cols-2 gap-16 items-center">
                 <div class="space-y-6">
                     <h2 class="text-4xl font-bold font-elegant uppercase">Sobre el Transporte</h2>
                     <p class="text-stone-600 font-semibold italic text-justify">
-                        Es fundamental aclarar que <span class="font-bold">Gente que Suma</span> no es una empresa de transporte público ni privado de pasajeros. 
-                        Brindamos un apoyo solidario exclusivamente como acompañantes para facilitar el día a día de quienes no cuentan con vehículo propio o movilidad independiente.
+                        Lo que se retribuye es el <strong>Acompañamiento y el Tiempo</strong>. El uso de vehículo es un apoyo complementario para quienes no tienen movilidad propia.
                     </p>
                     <div class="space-y-4">
-                        <div class="bg-[#FAF9F6] p-6 rounded-2xl border-l-4 border-[#D4A373]">
-                            <h4 class="font-bold mb-2">Uso de vehículo del cliente:</h4>
-                            <p class="text-sm text-stone-600 text-justify">Podemos acompañarle en su auto (contamos con licencia vigente). En este caso, el cliente debe contar con un seguro automotriz de cobertura amplia. <span class="font-bold">Por seguridad jurídica, no asumimos responsabilidad civil ni legal por incidentes viales.</span></p>
+                        <div class="bg-white p-6 rounded-2xl border-l-4 border-[#D4A373] card-shadow">
+                            <h4 class="font-bold mb-2">Vehículo del Cliente:</h4>
+                            <p class="text-sm text-stone-600 text-justify">Podemos manejar su auto (con licencia vigente). El cliente debe contar con seguro de cobertura amplia; <span class="font-bold">no asumimos responsabilidad por incidentes viales.</span></p>
                         </div>
-                        <div class="bg-[#FAF9F6] p-6 rounded-2xl border-l-4 border-[#8D7B68]">
-                            <h4 class="font-bold mb-2">Apoyo en vehículo del colaborador:</h4>
-                            <p class="text-sm text-stone-600 text-justify">Si requiere que utilicemos nuestro auto de forma solidaria para su cita, se aplicará un cargo de <span class="font-bold">$8.00 MXN por kilómetro</span> (gastos de recuperación de gasolina vía Google Maps). Este es un apoyo humano y no un servicio comercial; <span class="font-bold">el colaborador no se responsabiliza por imprevistos o incidentes en el trayecto.</span></p>
+                        <div class="bg-white p-6 rounded-2xl border-l-4 border-[#8D7B68] card-shadow">
+                            <h4 class="font-bold mb-2">Vehículo del Colaborador:</h4>
+                            <p class="text-sm text-stone-600 text-justify">Apoyo solidario con cargo de <span class="font-bold">$8.00 MXN por kilómetro</span> de recuperación de insumos (vía Google Maps). No es un servicio de taxi; el colaborador no se responsabiliza por imprevistos viales.</p>
                         </div>
                     </div>
                 </div>
-                <div class="relative">
-                    <img src="https://raw.githubusercontent.com/gentequesuma/website/refs/heads/main/demoimg.jpg" alt="[Apoyo humano y acompañamiento]" class="rounded-[3rem] shadow-xl grayscale-[30%]">
-                    <div class="absolute bottom-6 right-6 bg-white/80 backdrop-blur-md p-4 rounded-2xl max-w-xs text-[10px] text-stone-500 italic">
-                        *El costo por km ($8.00) es únicamente para recuperación de insumos de movilidad solidaria.
-                    </div>
+                <div>
+                    <img src="https://raw.githubusercontent.com/gentequesuma/website/refs/heads/main/demoimg.jpg" alt="[Apoyo en movilidad]" class="rounded-[3rem] shadow-xl grayscale-[30%]">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Formulario de Contacto -->
-    <section id="contacto" class="py-24 bg-[#FAF9F6]">
+    <section id="contacto" class="py-24 bg-white">
         <div class="max-w-4xl mx-auto px-6 bg-[#E2D1C3]/30 p-12 rounded-[3rem] shadow-sm border border-[#E2D1C3]">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold mb-4 text-stone-800 font-elegant">Contáctanos</h2>
-                <p class="text-stone-600">Estamos listos para sumarte manos y tranquilidad en Querétaro.</p>
+                <h2 class="text-3xl font-bold mb-4 text-stone-800 font-elegant">Cotiza un Apoyo</h2>
+                <p class="text-stone-600">Envíenos sus datos y el tipo de asistencia que requiere para brindarle una propuesta clara.</p>
             </div>
             <form id="contactForm" class="space-y-6">
                 <div class="grid md:grid-cols-2 gap-6">
                     <div>
-                        <label class="block text-xs font-bold text-stone-700 mb-2 uppercase tracking-widest">Nombre Completo</label>
+                        <label class="block text-xs font-bold text-stone-700 mb-2 uppercase tracking-widest">Nombre (Familiar o Usuario)</label>
                         <input type="text" id="nombre" required class="w-full px-6 py-4 rounded-2xl bg-white border border-stone-200 outline-none focus:ring-2 focus:ring-[#D4A373] transition">
                     </div>
                     <div>
-                        <label class="block text-xs font-bold text-stone-700 mb-2 uppercase tracking-widest">Teléfono</label>
+                        <label class="block text-xs font-bold text-stone-700 mb-2 uppercase tracking-widest">Teléfono de contacto</label>
                         <input type="tel" id="telefono" required class="w-full px-6 py-4 rounded-2xl bg-white border border-stone-200 outline-none focus:ring-2 focus:ring-[#D4A373] transition">
                     </div>
                 </div>
                 <div>
-                    <label class="block text-xs font-bold text-stone-700 mb-2 uppercase tracking-widest">Mensaje o necesidad</label>
-                    <textarea id="mensaje" rows="3" required class="w-full px-6 py-4 rounded-2xl bg-white border border-stone-200 outline-none focus:ring-2 focus:ring-[#D4A373] transition"></textarea>
+                    <label class="block text-xs font-bold text-stone-700 mb-2 uppercase tracking-widest">Detalle de la necesidad</label>
+                    <textarea id="mensaje" rows="3" required placeholder="Ej: Acompañamiento a cita médica mañana 10am..." class="w-full px-6 py-4 rounded-2xl bg-white border border-stone-200 outline-none focus:ring-2 focus:ring-[#D4A373] transition"></textarea>
                 </div>
-                <button type="submit" class="w-full bg-[#8D7B68] text-white font-bold py-6 rounded-2xl hover:bg-stone-800 transition shadow-xl uppercase tracking-widest text-lg">Enviar Solicitud</button>
+                <button type="submit" class="w-full bg-[#8D7B68] text-white font-bold py-6 rounded-2xl hover:bg-stone-800 transition shadow-xl uppercase tracking-widest text-lg">Enviar Solicitud Urgente</button>
             </form>
         </div>
     </section>
@@ -223,37 +237,38 @@
                 <img src="https://raw.githubusercontent.com/gentequesuma/website/refs/heads/main/logookclear.png" alt="Logo Blanco" class="h-12 brightness-0 invert opacity-70 mb-4">
                 <span class="text-3xl font-bold text-white tracking-widest font-cursive">Gente que Suma</span>
             </div>
-            <p class="mb-10 max-w-sm mx-auto text-sm italic">Servicios profesionales de asistencia civil para la tercera edad en Querétaro.</p>
+            <p class="mb-10 max-w-sm mx-auto text-sm italic">Proyecto civil de asistencia y acompañamiento humano en Querétaro.</p>
             <div class="flex flex-wrap justify-center gap-10 text-xs uppercase tracking-widest font-bold mb-12">
-                <a href="#garantia" class="hover:text-white transition">Garantía</a>
-                <a href="#proceso" class="hover:text-white transition">Proceso</a>
-                <a href="#transporte" class="hover:text-white transition">Transporte</a>
+                <a href="#garantia" class="hover:text-white transition">Confianza</a>
+                <a href="#disponibilidad" class="hover:text-white transition">Citas</a>
+                <a href="#proceso" class="hover:text-white transition">Transparencia</a>
                 <a href="https://api.whatsapp.com/send?phone=4421260133" class="text-[#25D366]">WhatsApp Directo</a>
             </div>
             <div class="text-[10px] text-stone-600 border-t border-stone-800 pt-8 uppercase tracking-widest">
-                &copy; 2026 Gente que Suma. Dignidad, Respeto y Autonomía.
+                &copy; 2026 Gente que Suma. Respeto, Acompañamiento y Seguridad Civil.
             </div>
         </div>
     </footer>
 
-    <!-- Botón Flotante de Chat -->
+    <!-- Chat Botón -->
     <button onclick="toggleChat()" class="fixed bottom-8 right-8 bg-[#D4A373] text-white p-5 rounded-full shadow-2xl hover:scale-110 transition-all z-[1001] border-4 border-white">
         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path></svg>
     </button>
 
+    <!-- Ventana Chat -->
     <div id="chat-window" class="hidden fixed bottom-28 right-8 w-[90vw] md:w-96 bg-white rounded-[2rem] shadow-2xl flex-col z-[1001] border border-stone-100 overflow-hidden">
         <div class="bg-[#D4A373] p-6 text-white flex justify-between items-center shadow-lg">
             <span class="font-bold tracking-tight font-cursive text-xl">Asistente Gente que Suma</span>
             <button onclick="toggleChat()" class="text-3xl font-light">&times;</button>
         </div>
         <div id="chat-messages" class="h-96 overflow-y-auto p-6 bg-stone-50 space-y-4 text-sm">
-            <div class="bg-white p-4 rounded-2xl shadow-sm italic text-stone-500 border border-stone-100">
-                Hola, bienvenido. ¿Deseas saber más sobre nuestro proceso de asistencia o los detalles del apoyo en transporte en Querétaro?
+            <div class="bg-white p-4 rounded-2xl shadow-sm italic text-stone-500 border border-stone-100 text-justify leading-tight">
+                Bienvenido. Atendemos a adultos mayores y apoyamos a sus cuidadores. ¿Desea conocer nuestro proceso de citas urgentes o la transparencia en nuestras notas de retribución?
             </div>
         </div>
-        <div id="chat-loading" class="hidden px-6 py-2 text-xs text-stone-400 italic">Escribiendo...</div>
+        <div id="chat-loading" class="hidden px-6 py-2 text-xs text-stone-400 italic">Respondiendo...</div>
         <div class="p-4 border-t border-stone-100 flex space-x-2 bg-white rounded-b-3xl">
-            <input type="text" id="chat-input" placeholder="Tu pregunta..." class="flex-1 bg-stone-50 px-6 py-3 rounded-full outline-none focus:ring-2 focus:ring-orange-100 border border-stone-100">
+            <input type="text" id="chat-input" placeholder="Escriba su duda aquí..." class="flex-1 bg-stone-50 px-6 py-3 rounded-full outline-none focus:ring-2 focus:ring-orange-100 border border-stone-100">
             <button onclick="sendAI()" class="bg-[#D4A373] text-white p-3 rounded-full hover:bg-[#8D7B68] transition">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
             </button>
@@ -295,12 +310,12 @@
                     body: JSON.stringify({
                         contents: [{ parts: [{ text: prompt }] }],
                         systemInstruction: {
-                            parts: [{ text: "Eres el asistente de 'Gente que Suma' en Querétaro. Explicas con mucha paciencia y respeto el proceso de servicio. El costo de apoyo en transporte es de $8/km de recuperación. Aclaras que NO es un servicio de taxi, sino un apoyo solidario para quienes no tienen auto, por lo que no asumimos responsabilidad legal por incidentes. Tono: Cálido, respetuoso y profesional." }]
+                            parts: [{ text: "Eres el asistente de 'Gente que Suma' en Querétaro. Atiendes tanto a adultos mayores como a sus hijos/familiares. Explicas que las citas urgentes NO son emergencias médicas ni ambulancia. Hablas de la 'Nota de Retribución por Apoyo' detallada al final del servicio. Tono: Paciente, humano, empoderador y muy claro en las políticas de seguridad y transparencia." }]
                         }
                     })
                 });
                 const data = await response.json();
-                const aiText = data.candidates?.[0]?.content?.parts?.[0]?.text || "Disculpa, hubo un inconveniente. ¿Podrías preguntar de nuevo?";
+                const aiText = data.candidates?.[0]?.content?.parts?.[0]?.text || "Lo siento, intente de nuevo.";
                 
                 const aiMsg = document.createElement('div');
                 aiMsg.className = "bg-white p-4 rounded-2xl shadow-sm border border-stone-100 text-stone-700 max-w-[85%]";
@@ -330,7 +345,7 @@
             
             window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${body}`;
             
-            alert("Se abrirá su aplicación de correo para enviar la solicitud. Gracias por su confianza.");
+            alert("Se abrirá su aplicación de correo para enviar su solicitud URGENTE. Gracias.");
         };
     </script>
 </body>
